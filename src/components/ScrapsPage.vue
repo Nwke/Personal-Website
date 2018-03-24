@@ -1,27 +1,36 @@
 <template>
   <v-app>
-    <v-layout row>
+    <v-layout row class="mx-auto anchor1">
+
+      <v-progress-circular
+        indeterminate
+        :size="220"
+        :width="7"
+        color="green"
+        v-if="showSpinner">
+
+      </v-progress-circular>
+
       <v-flex xs12 sm12>
-        <v-card>
+        <v-card class="mb-5" v-for="card in cards">
           <v-card-media
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvaIuJL7fxaR3edSVB0AaMZ6UDMg-qEU1byLTAf3rUG_vF_kZw"
+            :src=card.avatarCard
             height="230px"
           >
           </v-card-media>
           <v-card-title primary-title>
             <div>
-              <div class="headline">Инсайд из школы</div>
-              <span class="grey--text">Запись 17.03.18 (16:15)</span>
+              <div class="headline">{{card.titleCard}}</div>
+              <span class="grey--text">{{card.timeCreated}}</span>
             </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="orange" @click.native="show = true">Показать содержимое</v-btn>
-            <v-btn flat color="orange" @click.native="show = false">Закрыть запись</v-btn>
+            <v-btn flat color="orange" @click="showShowCard"> {{stateBtn}}</v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
           <v-slide-y-transition>
-            <v-card-text v-show="show">
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+            <v-card-text class="hidden">
+              {{ card.contentCard }}
             </v-card-text>
           </v-slide-y-transition>
         </v-card>
@@ -31,18 +40,60 @@
 </template>
 
 <script>
+
+  import * as firebase from  'firebase'
+
   export default {
     name: "scraps-page",
     data: () => ({
-      show: false
-    })
+      cards: [],
+      stateBtn: 'Показать содержимое',
+      showSpinner: true
+    }),
+    created() {
+      firebase.database().ref('Total').once('value').then((snapshot) => {
+        this.getContent(snapshot.val());
+      })
+    },
+    methods: {
+      getContent() {
+        this.cards = [];
+        firebase.database().ref(`AllCards`).once('value').then((snapshot) => {
+          getCards(snapshot.val())
+        });
+        const _this = this;
+        function getCards(card) {
+          for (let key in card) {
+            _this.cards.push({
+              titleCard: card[key].titleCard,
+              contentCard: card[key].contentCard,
+              avatarCard: card[key].avatar,
+              timeCreated: card[key].timeCreated
+            });
+          }
+          document.querySelector('.anchor1').classList.remove('mx-auto');
+          _this.showSpinner = false
+        }
+      },
+
+      showShowCard(e) {
+        let elem = e.target;
+        while (!elem.classList.contains('card')) {
+          elem = elem.parentNode
+        }
+        elem.querySelector('.card__text').classList.toggle('hidden');
+        this.stateBtn = elem.querySelector('.card__text').classList.contains('hidden')
+          ? 'Показать содержимое'
+          : 'Скрыть содержимое'
+      }
+    }
   }
 </script>
 
 <style scoped>
 
-  .test {
-    max-width: 100%;
+  .hidden {
+    display: none;
   }
 
 </style>

@@ -31,9 +31,9 @@
         </h1>
 
         <div class="subheading mt-4">
-          <span>Получал дополнительное образование в <a href="https://foxford.ru/" target="_blank"> foxford </a> (2017-2019) <br>
+          <span>Получал дополнительное образование в <a href="https://foxford.ru/" target="_blank"> foxford </a> (2017-2019).<br>
           Учился в онлайн-университете <a href="https://netology.ru/" target="_blank">Netology.ru</a>
-          (13.9.17 по 25.12.17) по направлению программирования (Курс по javascript) и защитил диплом<br></span>
+          (13.9.17 по 25.12.17) по направлению программирования (Курс по javascript) и защитил диплом.<br></span>
           <span class="title">Мои проекты:</span> <br>
           <a class="ml-2" href="http://mcards.tk" target="_blank">Карточки для запоминания</a> <br/>
           <a class="ml-2" href="http://fastcot.tk/Menu" target="_blank">Тренажер устного счета</a> <br>
