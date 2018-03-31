@@ -10,6 +10,7 @@
             name="input-1"
             autofocus
             v-model="title"
+            required
           >1</v-text-field>
         </v-flex>
       </v-layout>
@@ -22,6 +23,7 @@
             name="input-2"
             v-model="content"
             multi-line
+            required
           >1</v-text-field>
         </v-flex>
       </v-layout>

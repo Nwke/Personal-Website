@@ -20,12 +20,12 @@
           </v-card-media>
           <v-card-title primary-title>
             <div>
-              <div class="headline">{{card.titleCard}}</div>
-              <span class="grey--text">{{card.timeCreated}}</span>
+              <div class="headline">{{ card.titleCard }}</div>
+              <span class="grey--text">{{ card.timeCreated }}</span>
             </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="orange" @click="showShowCard"> {{stateBtn}}</v-btn>
+            <v-btn flat color="orange" @click="showShowCard"> Показать содержимое </v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
           <v-slide-y-transition>
@@ -72,9 +72,11 @@
             });
           }
           document.querySelector('.anchor1').classList.remove('mx-auto');
-          _this.showSpinner = false
+          _this.showSpinner = false;
+          _this.cards.reverse();
         }
       },
+
 
       showShowCard(e) {
         let elem = e.target;
@@ -82,7 +84,7 @@
           elem = elem.parentNode
         }
         elem.querySelector('.card__text').classList.toggle('hidden');
-        this.stateBtn = elem.querySelector('.card__text').classList.contains('hidden')
+        elem.querySelector('.btn__content').innerText = elem.querySelector('.card__text').classList.contains('hidden')
           ? 'Показать содержимое'
           : 'Скрыть содержимое'
       }
