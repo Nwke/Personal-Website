@@ -29,7 +29,7 @@
             <v-spacer></v-spacer>
           </v-card-actions>
           <v-slide-y-transition>
-            <v-card-text class="hidden">
+            <v-card-text class="content_card hidden">
               {{ card.contentCard }}
             </v-card-text>
           </v-slide-y-transition>
@@ -93,6 +93,10 @@
 </script>
 
 <style scoped>
+
+  .content_card {
+    font-size: 17px;
+  }
 
   .hidden {
     display: none;
