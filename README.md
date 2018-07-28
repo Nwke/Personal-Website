@@ -9,7 +9,9 @@
  1. create a web application on firebase
  2. go to the directory of the future project
  3. initialize the application with the following commands:
-  ``` bash
+  ``` bash 
+ npm install -g vue-cli
+
  # init 
  vue init webpack
  
