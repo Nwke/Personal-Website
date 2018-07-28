@@ -25,7 +25,7 @@
             </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="orange" @click="showShowCard"> Показать содержимое </v-btn>
+            <v-btn flat color="orange" @click="hiddenShowCard"> Показать содержимое </v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
           <v-slide-y-transition>
@@ -78,13 +78,14 @@
       },
 
 
-      showShowCard(e) {
+      hiddenShowCard(e) {
         let elem = e.target;
-        while (!elem.classList.contains('card')) {
+        while (!elem.classList.contains('v-card')) {
           elem = elem.parentNode
         }
-        elem.querySelector('.card__text').classList.toggle('hidden');
-        elem.querySelector('.btn__content').innerText = elem.querySelector('.card__text').classList.contains('hidden')
+        elem.querySelector('.content_card').classList.toggle('hidden');
+
+        elem.querySelector('.v-btn__content').innerText = elem.querySelector('.content_card').classList.contains('hidden')
           ? 'Показать содержимое'
           : 'Скрыть содержимое'
       }

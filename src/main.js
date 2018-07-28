@@ -1,6 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import './plugins/vuetify'
 import App from './App'
 import store from './store/';
 import router from './router'
@@ -15,7 +16,12 @@ Vue.config.productionTip = false;
 
 // Initialize Firebase
 const config = {
-  "YOUR CONFIG WITH GOOGLE FIREBASE WEB PROJECT"
+    apiKey: "AIzaSyA1Q-6MCD7UkfZk3NW5Q7pkhs5N5IPskdY",
+    authDomain: "personaldiary-ebad8.firebaseapp.com",
+    databaseURL: "https://personaldiary-ebad8.firebaseio.com",
+    projectId: "personaldiary-ebad8",
+    storageBucket: "personaldiary-ebad8.appspot.com",
+    messagingSenderId: "481246175672"
 };
 firebase.initializeApp(config);
 

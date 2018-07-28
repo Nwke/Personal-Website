@@ -1,7 +1,7 @@
 <template>
     <div>
       <v-app>
-        Ютуб ченел
+        <a href="https://www.youtube.com/channel/UCcYMw7MZpvfLbhnLeiLS9iw">Ютуб-канал</a>
       </v-app>
     </div>
 </template>
