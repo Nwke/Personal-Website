@@ -1,6 +1,6 @@
-## "Личный дневник" (Русская версия)
+## "Личный дневник" (Personal diary)
 ***
-### Функционал:
+### Functional:
 - You can write something about yourself
 - Add posts
 - (Create different tabs to suit your preferences)
