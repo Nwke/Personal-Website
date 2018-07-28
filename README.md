@@ -1,15 +1,15 @@
-## "Личный дневник"
+## "Личный дневник" (Русская версия)
 ***
 ### Функционал:
-- Написать что-то о себе
-- Делать посты после авторизации 
-- (Можно добавлять различные вкладки под себя)
+- You can write something about yourself
+- Add posts
+- (Create different tabs to suit your preferences)
 ***
 ### Build Setup (Для полноценного пользование проектом требуется):
- 1. создать проект на firebase
- 2. добавить конфиг вашего приложения взятого из **firebase** в *src/main.js*
- 3. проиницализировать приложение следующими командами:
- ``` bash
+ 1. create a web application on firebase
+ 2. add the configuration of your application taken from** firebase * * to * src/main.js*
+ 3. initialize the application with the following commands:
+  ``` bash
  # init 
  vue init webpack
  
