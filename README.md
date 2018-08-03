@@ -15,14 +15,14 @@
  # init 
  vue init webpack
  
+ # download project from git add their to the working directory
+ # add the configuration of your application taken from **firebase** to *src/main.js*
+ 
  # install dependecies
- npm install / yarn add
+ npm / yarn install
  
  # build for production with minification
  npm / yarn run build
  ```
- next:
- 1. add the configuration of your application taken from **firebase** to *src/main.js*
- 2. download the project from github and add their to the working directory
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
