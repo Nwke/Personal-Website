@@ -48,7 +48,7 @@
     </v-navigation-drawer>
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Записки путешественника во времени</v-toolbar-title>
+      <v-toolbar-title>Denis Blinkov (Nwke)</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
