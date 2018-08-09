@@ -16,12 +16,7 @@ Vue.config.productionTip = false;
 
 // Initialize Firebase
 const config = {
-    apiKey: "AIzaSyA1Q-6MCD7UkfZk3NW5Q7pkhs5N5IPskdY",
-    authDomain: "personaldiary-ebad8.firebaseapp.com",
-    databaseURL: "https://personaldiary-ebad8.firebaseio.com",
-    projectId: "personaldiary-ebad8",
-    storageBucket: "personaldiary-ebad8.appspot.com",
-    messagingSenderId: "481246175672"
+    'YOUR CONFIG FROM FIREBASE'
 };
 firebase.initializeApp(config);
 
